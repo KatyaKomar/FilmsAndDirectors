@@ -30,6 +30,7 @@ public class DirectorMapper {
 		directorDTO.setName(directorEntity.getName());
 		directorDTO.setSurname(directorEntity.getSurname());
 		directorDTO.setNumberOfFilms(directorEntity.getNumberOfFilms());
+
 		return directorDTO;
 	}
 }

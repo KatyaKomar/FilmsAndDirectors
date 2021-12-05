@@ -2,15 +2,12 @@ package com.komar.films.dto;
 
 import com.sun.istack.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.NumberFormat;
 
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Pattern;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public class FilmDTO {
@@ -95,5 +92,18 @@ public class FilmDTO {
 
 	public void setDirectors(List<DirectorDTO> directors) {
 		this.directors = directors;
+	}
+
+	@Override
+	public String toString() {
+		return "FilmDTO{" +
+				"id=" + id +
+				", title='" + title + '\'' +
+				", description='" + description + '\'' +
+				", releaseDate=" + releaseDate +
+				", rating=" + rating +
+				", numberOfViews=" + numberOfViews +
+				", directors=" + directors.toString() +
+				'}';
 	}
 }

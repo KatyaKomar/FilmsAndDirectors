@@ -57,6 +57,11 @@ public class FilmMapper {
 		filmDTO.setReleaseDate(filmEntity.getReleaseDate());
 		filmDTO.setRating(filmEntity.getRating());
 		filmDTO.setNumberOfViews(filmEntity.getNumberOfViews());
+		List<DirectorDTO> directorDTOS = new ArrayList<>();
+		for (DirectorEntity director: filmEntity.getDirectors()){
+			directorDTOS.add(directorMapper.entityToDTO(director));
+		}
+		filmDTO.setDirectors(directorDTOS);
 		return filmDTO;
 	}
 }
